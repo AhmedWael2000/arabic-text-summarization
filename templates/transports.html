@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+{% block body %}
+<h1>{{ name }}</h1>
+<div class="content">
+    <div class ="table-responsive">
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>National ID</th>
+            <th>Governorate</th>
+            <th>Phone</th>
+            <th>Complaint</th>
+            <th>Summary</th>
+            <th>Complaint_time</th>
+            <th>Email</th>
+            <th>Positive</th>
+            <th>Neutral</th>
+            <th>Negative</th>
+            <th>Sentiment Class</th>
+            <th>File</th>
+            <th>Action</th>
+        </tr>
+        {% for i in quaries %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.name }}</td>
+                <td>{{ i.national_id }}</td>
+                <td>{{ i.governorate }}</td>
+                <td>{{ i.phone }}</td>
+                <td class="truncate">{{ i.Complaint }}</td>
+                <td class="truncate">{{ i.summary }}</td>
+                <td>{{ i.complaint_time }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.positive }}</td>
+                <td>{{ i.neutral }}</td>
+                <td>{{ i.negative }}</td>   
+                <td>{{ i.sentiment_type }}</td> 
+                <td>{{ i.file }}</td>
+                <td>
+                    <a href="/view/{{i.id}}">View</a>
+                    <br>
+                    <a href="/delete/{{i.id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+{% endblock %}

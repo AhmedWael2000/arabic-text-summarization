@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Noto Kufi Arabic', serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    direction: rtl; /* Right-to-Left */
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.complaint-detail {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.complaint-detail label {
+    font-weight: bold;
+    color: #555;
+    display: inline-block;
+    width: 150px; /* Adjust as needed */
+    margin-right: 10px;
+}
+.complaint-detail span {
+    color: #777;
+}
+.edit-button, .save-button, .cancel-button, .recalculate-button, .summary-button, .back-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+.edit-button:hover, .save-button:hover, .cancel-button:hover, .recalculate-button:hover, .summary-button:hover, .back-button:hover {
+    background-color: #0056b3;
+}
+.hidden {
+    display: none;
+}
+.form-container {
+    margin-top: 15px;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-container select {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-container .save-button, .form-container .cancel-button, .form-container .recalculate-button {
+    margin-top: 10px;
+}
+.edit-button, .save-button, .cancel-button, .recalculate-button, .summary-button, .back-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Noto Kufi Arabic', serif; /* Add this line */
+}
+
+.button-group {
+    margin-top: 20px;
+}

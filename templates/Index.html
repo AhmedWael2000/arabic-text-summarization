@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/mycss.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>استمارة شكاوى و مقترحات</h2>
+        </div>
+        <form  class="form" id="form" method="post" enctype="multipart/form-data">
+            <div class="form-control">
+                <label for="fullname">الاسم</label>
+                <input name="fullname" id="fullname" placeholder="ادخل الاسم رباعي" type="text">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="nationalID" name="nationalID">الرقم القومي</label>
+                <input name="nationalID" id="nationalID" placeholder="ادخل الرقم القومي" type="text">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="gov">المحافظة</label>
+                <!-- <input name="gov" id="gov" placeholder="Enter Address" type="text"> -->
+                <select id="gov" name="gov">
+                    <option value="">Select Governorate</option>
+                    <option value="Cairo">Cairo</option>
+                    <option value="Alexandria">Alexandria</option>
+                    <option value="Sharqia">Sharqia</option>
+                    <option value="Qalyubia">Qalyubia</option>
+                    <option value="Daqahlia">Daqahlia</option>
+                    <option value="Damietta">Damietta</option>
+                    <option value="Fayoum">Fayoum</option>
+                    <option value="Gharbia">Gharbia</option>
+                    <option value="Giza">Giza</option>
+                    <option value="Ismailia">Ismailia</option>
+                    <option value="Kafr el-Sheikh">Kafr el-Sheikh</option>
+                    <option value="Luxor">Luxor</option>
+                    <option value="Marsa Matruh">Marsa Matruh</option>
+                    <option value="Minya">Minya</option>
+                    <option value="Monufia">Monufia</option>
+                    <option value="New Valley">New Valley</option>
+                    <option value="North Sinai">North Sinai</option>
+                    <option value="Port Said">Port Said</option>
+                    <option value="Qena">Qena</option>
+                    <option value="Red Sea">Red Sea</option>
+                    <option value="Sohag">Sohag</option>
+                    <option value="South Sinai">South Sinai</option>
+                    <option value="Suez">Suez</option>
+                    <option value="Beni Suef">Beni Suef</option>
+                    <option value="Beheira">Beheira</option>
+                    <option value="Aswan">Aswan</option>
+                    <option value="Asyut">Asyut</option>
+                </select>
+
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="phone">الهاتف</label>
+                <input name="phone" id="phone" dir="rtl" placeholder="مثال 0112223333" type="text">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">البريد الإلكتروني</label>
+                <input name="email" id="email" placeholder="أدخل بريدك الإلكتروني" type="text">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="feedback">الشكوى</label>
+                <!-- <input name="feedback" id="feedback" type="text"> -->
+                <textarea id="feedback" name="feedback" rows="10" cols="30"
+                    placeholder="أضف مقترحك أو شكوتك هنا ..."></textarea>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
+            </div>
+
+
+            <div class="form-control">
+                <label for="files">ملفات ذات صلة</label>
+                <input type="file" class="form-control" name="files">
+            </div>
+            <button name="submit">Submit</button>
+
+            <!-- <div class="form-btn">
+                    <input type="submit" class="btn-primary" value="Register" name="submit">
+                </div> -->
+        </form>
+
+    </div>
+    <script src="{{ url_for('static',filename='js/validation.js') }}"></script>
+
+</body>
+
+</html>

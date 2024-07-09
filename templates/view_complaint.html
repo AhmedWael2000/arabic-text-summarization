@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/view_complaint.css') }}">
+    <title>عرض الشكوى</title>
+</head>
+<body>
+<div class="container">
+    <h1>تفاصيل الشكوى</h1>
+    <div class="complaint-detail">
+        <label>الاسم:</label>
+        <span>{{ complaint.name }}</span>
+    </div>
+    <div class="complaint-detail">
+        <label>البريد الإلكتروني:</label>
+        <span>{{ complaint.email }}</span>
+    </div>
+    <div class="complaint-detail">
+        <label>الهاتف:</label>
+        <span>{{ complaint.phone }}</span>
+    </div>
+    <div class="complaint-detail">
+        <label>الشكوى:</label>
+        <p id="complaint-text">{{ complaint.Complaint }}</p>
+        <button class="summary-button" onclick="summarizeComplaint({{ complaint.id }})">توليد الملخص</button>
+        <p id="complaint-summary" style="margin-top: 10px; color: #333;"></p>
+        <div id="loading-indicator" style="display: none;">جاري توليد الملخص...</div>
+    </div>
+    <div class="complaint-detail">
+        <label>المحافظة:</label>
+        <span>{{ complaint.governorate }}</span>
+    </div>
+    <div class="complaint-detail">
+        <label>الرقم القومي:</label>
+        <span>{{ complaint.national_id }}</span>
+    </div>
+    <div class="complaint-detail">
+        <label>مصنف إلى:</label>
+        <span id="current-value">
+            {% if complaint.tfidf == 0 %}
+                وزارة النقل
+            {% elif complaint.tfidf == 1 %}
+                وزارة الصحة
+            {% elif complaint.tfidf == 2 %}
+                وزارة الكهرباء و الماء
+            {% else %}
+                غير ذلك
+            {% endif %}
+        </span>
+        <button id="edit-button" class="edit-button" onclick="showEditForm()">تعديل التصنيف</button>
+    </div>
+    <div id="edit-form" class="complaint-detail hidden">
+        <div class="form-container">
+            <form id="update-tfidf-form" action="{{ url_for('edit_misclassification', id=complaint.id) }}" method="post">
+                <label for="new-value">اختر التصنيف الجديد:</label>
+                <select id="new-value" name="new_value">
+                    <option value="0">وزارة النقل</option>
+                    <option value="1">وزارة الصحة</option>
+                    <option value="2">وزارة الكهرباء و الماء</option>
+                    <option value="3">غير ذلك</option>
+                </select>
+                <button type="button" class="save-button" onclick="saveNewValue()">حفظ</button>
+                <button type="button" class="cancel-button" onclick="cancelEdit()">إلغاء</button>
+            </form>
+        </div>
+    </div>
+    <div class="button-group">
+        <button class="back-button" onclick="goBack({{ complaint.tfidf }})">رجوع</button>
+    </div>
+</div>
+<script src="{{ url_for('static',filename='js/view_complaint.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Flask==2.1.2
+SQLAlchemy==1.4.36
+transformers==4.24.0
+ollama==0.1.0
+mysqlclient==2.1.0
