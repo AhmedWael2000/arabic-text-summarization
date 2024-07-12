@@ -66,16 +66,20 @@ Setup Instructions
 
 ```pip install -r requirements.txt```
 
-Configure the database:
+create ```.env``` file and set database credentials in it.
+then open a terminal and write ```python```
+then run these two lines:
 
-Set up a MySQL database.
-Update the database configuration in .env.
-Run the Flask application:
+```>> from app import db```
 
-```flask run```
-Access the application:
+```>> db.create_all()```
+then you are ready to run the app.py and run the server.
+
+```python app.py```
 
 Open your browser and navigate to http://localhost:5000.
+
+
 ## Future Work
 
 Performance Optimization: Work on optimizing the performance of Aya LLM to reduce the time taken for classification(by trying to fine-tune it using LoRA on a similar complaint dataset.
