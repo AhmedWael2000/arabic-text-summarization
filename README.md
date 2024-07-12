@@ -73,6 +73,7 @@ then run these two lines:
 ```>> from app import db```
 
 ```>> db.create_all()```
+
 then you are ready to run the app.py and run the server.
 
 ```python app.py```
