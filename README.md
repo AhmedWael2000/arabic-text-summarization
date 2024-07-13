@@ -4,6 +4,18 @@ The Egyptian government receives a large number of complaints and feedback on a 
 
 ## Problem Statement
 The main problem addressed by this project is the efficient handling of numerous complaints and feedback received daily by the Egyptian government. The system aims to:
+# Demo 
+## User Demo
+The user fills out an ordinary form with his complaint and personal data.
+
+https://github.com/user-attachments/assets/d242c511-6353-41a5-9f0c-5d12eb872747
+
+## Admin Demo
+After the user submits the form, the Complaint is classified to one of the government sections. 
+Every section includes only the related complaints. the Admin can browse any complaint and summarize it using Aya LLM.
+
+https://github.com/user-attachments/assets/4714874b-99de-43dc-a81e-c54b0ea12e5c
+
 
 ## Technologies Used
 Flask: A lightweight web framework used to build the web application.
@@ -37,18 +49,6 @@ We implemented Aya LLM for text classification.
 Results:
 It provided the most accurate classification.
 However, it was the slowest among the methods we tried.
-
-# Demo 
-## User Demo
-The user fills out an ordinary form with his complaint and personal data.
-
-https://github.com/user-attachments/assets/d242c511-6353-41a5-9f0c-5d12eb872747
-
-## Admin Demo
-After the user submits the form, the Complaint is classified to one of the government sections. 
-Every section includes only the related complaints. the Admin can browse any complaint and summarize it using Aya LLM.
-
-https://github.com/user-attachments/assets/4714874b-99de-43dc-a81e-c54b0ea12e5c
 
 How to Run the Project
 Prerequisites
